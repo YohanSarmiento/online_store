@@ -33,6 +33,11 @@
     color: #ffffff;
 
 }
+.row-image{/*In cart.html for small image of cart...*/
+    /* border: 2px rgb(11, 1, 156) solid; */
+	width: 100px;
+}
+
 .btn-sc {
     background-color: #e8114b;
     color: white;

@@ -37,8 +37,10 @@ function getProducts(categoryId) {
             productElement.appendChild(hrElement);
 
             const addToCartBtn = document.createElement('button');
-            addToCartBtn.classList.add('btn', 'btn-outline-primary', 'add-btn');
-            addToCartBtn.textContent = 'Add to Cart';
+            addToCartBtn.classList.add('btn', 'btn-shop', 'btn-outline-primary', 'add-btn');
+            addToCartBtn.id = 'product-info';
+            addToCartBtn.setAttribute('data-product-id', product.id);
+            addToCartBtn.textContent = 'Shop now';
             productElement.appendChild(addToCartBtn);
 
             const viewBtn = document.createElement('a');
@@ -63,36 +65,4 @@ function getProducts(categoryId) {
       })
       .catch(error => console.error(error));
   }
-  
-  
-
-
-
-
-
-// var categoryElement = document.getElementById('category-info');
-// var categoryId = ticketElement.dataset.categoryId;
-
-// function getCookie(name) {
-//     const value = `; ${document.cookie}`;
-//     const parts = value.split(`; ${name}=`);
-//     if (parts.length === 2) return parts.pop().split(';').shift();
-// }
-
-// function getProducts(categoryId) {
-//     console.log("i am get products")
-//     fetch(`/store_app/get-products-by-category/${categoryId}/`)
-//     .then(response => response.json())
-//     // console.log(response)
-//     .then(data => {
-//         console.log(data);
-//         const productList = document.getElementById('product-list');
-//         productList.innerHTML = '';
-//         data.products.forEach(product => {
-//             const li = document.createElement('li');
-//             li.textContent = product.name;
-//             productList.appendChild(li);
-//         });
-//     });
-// }
 
