@@ -37,14 +37,14 @@ function getProducts(categoryId) {
             productElement.appendChild(hrElement);
 
             const addToCartBtn = document.createElement('button');
-            addToCartBtn.classList.add('btn', 'btn-outline-secondary', 'add-btn');
+            addToCartBtn.classList.add('btn', 'btn-outline-primary', 'add-btn');
             addToCartBtn.textContent = 'Add to Cart';
             productElement.appendChild(addToCartBtn);
 
             const viewBtn = document.createElement('a');
             viewBtn.classList.add('btn', 'btn-outline-success');
             viewBtn.href = '#';
-            viewBtn.textContent = 'View';
+            viewBtn.textContent = 'Details';
             productElement.appendChild(viewBtn);
 
             const priceElement = document.createElement('h4');

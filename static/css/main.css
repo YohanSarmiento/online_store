@@ -24,9 +24,15 @@
 .navbar-brand,
 .nav-link,
 .nav-link.active {
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
+.nav-link:hover {
+    /* font-weight: bold; */
+    text-decoration: underline;
+    color: #ffffff;
+
+}
 .btn-sc {
     background-color: #e8114b;
     color: white;
