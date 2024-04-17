@@ -53,7 +53,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'online_store.urls'
 
-TEMPLATE_DIR = os.path.join(BASE_DIR,'flights', 'templates')
+TEMPLATE_DIR = os.path.join(BASE_DIR,'store_app', 'templates')
 
 
 TEMPLATES = [
