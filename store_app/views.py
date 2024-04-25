@@ -11,7 +11,7 @@ def home(request):
         'categories': categories,
         'products': products
     }
-    return render(request, 'home.html', context)
+    return render(request, 'store/home.html', context)
 
 def get_products_by_category(request, category_id):
     print(category_id)
@@ -39,7 +39,7 @@ def view_cart(request):
         'cart_items': cart_items,
         'total_price': total_price,
     }
-    return render(request, 'cart.html', context)
+    return render(request, 'store/cart.html', context)
 
 def add_to_cart(request, product_id):
     # product_id = request.GET.get('product_id')

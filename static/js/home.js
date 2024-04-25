@@ -7,7 +7,7 @@ function getCookie(name) {
 
 function getProducts(categoryId) {
     console.log("Fetching products for category:", categoryId);
-    fetch(`/store_app/get-products-by-category/${categoryId}/`)
+    fetch(`/get-products-by-category/${categoryId}/`)
       .then(response => response.json())
       .then(data => {
         console.log(data);

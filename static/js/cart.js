@@ -4,7 +4,7 @@ var productId = productElement.dataset.productId
 
 // JavaScript code to add products to the cart using AJAX
 function addToCart(productId) {
-    fetch(`/store_app/add-to-cart/?product_id=${productId}`)
+    fetch(`/add-to-cart/?product_id=${productId}`)
         .then(response => {
             if (response.ok) {
                 console.log('Product added to cart successfully');
@@ -24,7 +24,7 @@ document.addEventListener('click', function(event) {
     if (event.target.classList.contains('add-btn')) {
         const productId = event.target.dataset.productId;
         if (productId) {
-            fetch(`/store_app/add-to-cart/${productId}/`)
+            fetch(`/add-to-cart/${productId}/`)
                 .then(response => {
                     if (response.ok) {
                         // Handle successful response
@@ -43,7 +43,7 @@ document.addEventListener('click', function(event) {
 });
 
 function updateCart(itemId, newQuantity) {
-    fetch(`/store_app/update-cart/?item_id=${itemId}&quantity=${newQuantity}`)
+    fetch(`/update-cart/?item_id=${itemId}&quantity=${newQuantity}`)
         .then(response => {
             if (response.ok) {
                 console.log('Cart updated successfully');
