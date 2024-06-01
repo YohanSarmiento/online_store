@@ -32,28 +32,6 @@ def get_products_by_category(request, category_id):
     
     return JsonResponse(products_data, safe=False)  # Set safe=False if including non-string data
 
-def view_cart(request):
-    cart_items = OrderItem.objects.all()  # Assuming you have a CartItem model representing items in the cart
-    total_price = sum(item.product.price * item.quantity for item in cart_items)
-    context = {
-        'cart_items': cart_items,
-        'total_price': total_price,
-    }
-    return render(request, 'store/cart.html', context)
-
-def add_to_cart(request, product_id):
-    # product_id = request.GET.get('product_id')
-    # Logic to add the product to the cart
-    # For example:
-    OrderItem.objects.create(product_id=product_id, quantity=1)
-    return JsonResponse({'message': 'Product added to cart'})
-
-def remove_from_cart(request):
-    item_id = request.POST.get('item_id')
-    item = OrderItem.objects.get(id=item_id)
-    item.delete()
-    return redirect('view_cart')
-
 def update_cart(request):
     item_id = request.GET.get('item_id')
     new_quantity = int(request.GET.get('quantity'))
