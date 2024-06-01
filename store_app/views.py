@@ -13,6 +13,9 @@ def home(request):
     }
     return render(request, 'store/home.html', context)
 
+def supermarket(request):
+    return render(request, 'store/supermarket.html')
+
 def get_products_by_category(request, category_id):
     print(category_id)
     categories = Category.objects.all()
