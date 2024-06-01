@@ -13,9 +13,6 @@ def home(request):
     }
     return render(request, 'store/home.html', context)
 
-def supermarket(request):
-    return render(request, 'store/supermarket.html')
-
 def get_products_by_category(request, category_id):
     print(category_id)
     categories = Category.objects.all()
@@ -34,6 +31,9 @@ def get_products_by_category(request, category_id):
         products_data.append(product_data)
     
     return JsonResponse(products_data, safe=False)  # Set safe=False if including non-string data
+
+def supermarket(request):
+    return render(request, 'store/supermarket.html')
 
 def update_cart(request):
     item_id = request.GET.get('item_id')
