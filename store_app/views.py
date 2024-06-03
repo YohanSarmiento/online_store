@@ -32,9 +32,6 @@ def get_products_by_category(request, category_id):
     
     return JsonResponse(products_data, safe=False)  # Set safe=False if including non-string data
 
-def supermarket(request):
-    return render(request, 'store/supermarket.html')
-
 def update_cart(request):
     item_id = request.GET.get('item_id')
     new_quantity = int(request.GET.get('quantity'))
