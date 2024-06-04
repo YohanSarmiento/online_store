@@ -32,8 +32,6 @@ def get_products_by_category(request, category_id):
     
     return JsonResponse(products_data, safe=False)  # Set safe=False if including non-string data
 
-def supermarket(request):
-    return render(request, 'store/supermarket.html')
 def view_cart(request):
     cart_items = OrderItem.objects.all()  # Assuming you have a CartItem model representing items in the cart
     total_price = sum(item.product.price * item.quantity for item in cart_items)
