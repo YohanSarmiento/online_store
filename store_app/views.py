@@ -34,6 +34,14 @@ def get_products_by_category(request, category_id):
 
 def supermarket(request):
     return render(request, 'store/supermarket.html')
+def view_cart(request):
+    cart_items = OrderItem.objects.all()  # Assuming you have a CartItem model representing items in the cart
+    total_price = sum(item.product.price * item.quantity for item in cart_items)
+    context = {
+        'cart_items': cart_items,
+        'total_price': total_price,
+    }
+    return render(request, 'store/cart.html', context)
 
 def update_cart(request):
     item_id = request.GET.get('item_id')
@@ -46,3 +54,9 @@ def update_cart(request):
 
     # Return a JSON response indicating success
     return JsonResponse({'message': 'Cart updated successfully'})
+
+def remove_from_cart(request):
+    item_id = request.POST.get('item_id')
+    item = OrderItem.objects.get(id=item_id)
+    item.delete()
+    return redirect('view_cart')
